@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+    <title>Eco-Drive</title>
+ <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+    <link href="css/style.css" rel="stylesheet">
+
+
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
+    </head>
+    <body class="centre_buttons-billy">
+        <wrapper>
+
+        <div class="previous-billy">
+
+
+        </div>
+            <div class="title-billy">
+        <h2>Turn Emission<br> Into Fuel </h2>
+
+        </div>
+            <div class="dial-billy">
+
+ <div class="load-billy">
+        <div class="progress-billy">
+        <div class="emissions-billy">0%</div>
+
+</div>
+             </div>
+                <br>
+                <button class="refule_confirmation-billy " type="button" onclick="move()"> Refuel</button>
+
+                <br>
+                <br>
+                <button class=" hide-billy refule_confirmation-billy " type="button" onclick="move_down()"> Cancel</button>
+                <br>
+                <br>
+                <br>
+                <div class="load-billy">
+        <div class="progress_refill-billy">
+        <div id="myBar-billy">0%</div>
+                    </div>
+                    </div>
+<br>
+
+
+        <a href="refuel_inprogress.html" button class="refuel-billy" type="button">CONFIRM REFUELING</a>
+              <br>
+              <br>
+
+        </div>
+         <a href="cup.html" button class="navigate_page-billy" type="button" >Return</a>
+
+            </wrapper>
+
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+    </script>
+
+    <script>
+$(document).ready(function(){
+        setTimeout(function(){
+        $('.refule_confirmation-billy').show('');
+        },5000);
+
+     function showElement() {
+         $('.refule_confirmation-billy').toggleClass('show');
+     }
+  });
+
+            </script>
+
+
+
+<script>
+function move() {
+  var elem = document.getElementById("myBar-billy");
+  var width = 0;
+  var id = setInterval(frame, 10);
+  function frame() {
+    if (width >= 50) {
+      clearInterval(id);
+    } else {
+      width++;
+      elem.style.width = width + '%';
+      elem.innerHTML = width * 1  + '%';
+
+    }
+  }
+
+
+}
+
+</script>
+
+        <script>
+function move_down() {
+  var elem = document.getElementById("myBar-billy");
+  var width = 50;
+  var id = setInterval(frame, 10);
+  function frame() {
+    if (width <= 0) {
+      clearInterval(id);
+    } else {
+      width--;
+      elem.style.width = width + '%';
+      elem.innerHTML = width * 1  + '%';
+    }
+  }
+}
+</script>
+   <script>
+$(document).ready(function(){
+    $('.refule_confirmation-billy').click(function(){
+        $('.emissions-billy').css('background', 'white');
+    })
+})
+
+</script>
+           <script>
+$(document).ready(function(){
+    $('.hide-billy').click(function(){
+        $('.emissions-billy').css('background', 'black   ');
+    })
+})
+
+</script>
+        <script>
+$(document).ready(function(){
+    $('.refule_confirmation-billy').click(function(){
+        $('.refuel-billy').show();
+    })
+});
+
+        </script>
+
+    </body>
